@@ -83,7 +83,7 @@ $env:POSTGRES_PASSWORD = "uma-senha-segura"
 docker compose up --build
 ```
 
-O Compose inicia PostgreSQL e API, mantém os dados em um volume nomeado e só inicializa a API após a disponibilidade do banco. Para encerrar, use `docker compose down`. O status da aplicação pode ser consultado em `http://localhost:8080/actuator/health`.
+O Compose inicia PostgreSQL e API, mantém os dados em um volume nomeado e só inicializa a API após a disponibilidade do banco. O PostgreSQL é exposto na porta `5433` por padrão, evitando conflito com uma instalação local na porta 5432; altere-a com `POSTGRES_PORT` se necessário. Para encerrar, use `docker compose down`. O status da aplicação pode ser consultado em `http://localhost:8080/actuator/health`.
 
 ## Endpoints
 
