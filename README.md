@@ -74,6 +74,17 @@ Depois de iniciar:
 .\mvnw.cmd test
 ```
 
+## Executar com Docker
+
+Com o Docker Desktop aberto, defina uma senha para o banco e inicie os dois serviços:
+
+```powershell
+$env:POSTGRES_PASSWORD = "uma-senha-segura"
+docker compose up --build
+```
+
+O Compose inicia PostgreSQL e API, mantém os dados em um volume nomeado e só inicializa a API após a disponibilidade do banco. Para encerrar, use `docker compose down`. O status da aplicação pode ser consultado em `http://localhost:8080/actuator/health`.
+
 ## Endpoints
 
 ### Categorias

@@ -1,0 +1,5 @@
+.git
+.idea
+.tools/m2
+target
+*.md
