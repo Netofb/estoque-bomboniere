@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @Table(name = "produtos")
 public class Produto {
  @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
+ @Version private Long versao;
  @Column(nullable=false) private String nome; @Column(length=1000) private String descricao;
  @Column(nullable=false, precision=12, scale=2) private BigDecimal precoCompra;
  @Column(nullable=false, precision=12, scale=2) private BigDecimal precoVenda;

@@ -16,7 +16,7 @@ API REST para gerenciamento do estoque de uma bomboniere. Desenvolvida com Java,
 
 ## Tecnologias
 
-- Java 25
+- Java 21
 - Spring Boot 3.3
 - Spring Web, Spring Data JPA e Bean Validation
 - PostgreSQL 18
@@ -27,7 +27,7 @@ API REST para gerenciamento do estoque de uma bomboniere. Desenvolvida com Java,
 
 ## Pré-requisitos
 
-- Java 25 ou superior;
+- Java 21 ou superior;
 - PostgreSQL em execução;
 - banco de dados chamado `bomboniere`.
 
@@ -162,6 +162,10 @@ POST /api/produtos/1/saida
   "timestamp": "2026-09-18T21:00:00"
 }
 ```
+
+## Concorrência no estoque
+
+Produtos utilizam bloqueio otimista do JPA por meio de uma coluna de versão. Quando duas operações tentam alterar o mesmo produto ao mesmo tempo, apenas a primeira atualização é aceita; a outra recebe `409 Conflict` e deve tentar novamente. Essa proteção reduz o risco de uma venda sobrescrever indevidamente o estoque atualizado por outra operação.
 
 ## Estrutura
 
