@@ -16,7 +16,7 @@ API REST para gerenciamento do estoque de uma bomboniere. Desenvolvida com Java,
 
 ## Tecnologias
 
-- Java 17
+- Java 25
 - Spring Boot 3.3
 - Spring Web, Spring Data JPA e Bean Validation
 - PostgreSQL 18
@@ -27,7 +27,7 @@ API REST para gerenciamento do estoque de uma bomboniere. Desenvolvida com Java,
 
 ## Pré-requisitos
 
-- Java 17 ou superior;
+- Java 25 ou superior;
 - PostgreSQL em execução;
 - banco de dados chamado `bomboniere`.
 
